@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://bootswatch.com/5/solar/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   </head>
   <body>
   <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
@@ -24,20 +25,23 @@
           <a class="nav-link" href="index.php?page=contact">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.php?page=connexion">connexion</a>
-        </li>
+        <a class="nav-link" href="index.php?page=apropos">About</a>
+        <li class="nav-item">
         <?php 
         if(isset($_SESSION['login'])){
-          echo '<li class=nav-item
-        <a class="nav-link" href="index.php?page=apropos">'.$_SESSION['login'].'</a>
+          echo '<li class=nav-item">
+        <a class="nav-link" href="index.php?page=profil">'.$_SESSION['login'].'</a>
+        <a href="index.php?page=logout"><i class="bi bi-box-arrow-right"></i> </a>
         </li>';
+      }else{
+        echo '<li class=nav-item">
+        <a class="nav-link" href="index.php?page=inscription">Inscription</a> </li>
+        <li class="nav-item">
+        <a class="nav-link" href="index.php?page=connexion">Connexion</a>
+      </li>';
       }
         ?>
-        <li class="nav-item">
-          <a class="nav-link" href="index.php?page=apropos">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="index.php?page=inscription">Inscription</a>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
           <div class="dropdown-menu">

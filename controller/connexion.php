@@ -16,6 +16,7 @@ if(isset($_POST['connecter'])){
     if(password_verify($password, $recupPassword)){
       echo 'Tout est bon';
       $_SESSION['login'] = $email;
+      header('location: index.php');
     }
       else{
         echo "Il y a un problème d'identifiant";
