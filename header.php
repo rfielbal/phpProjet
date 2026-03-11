@@ -25,6 +25,9 @@
           <a class="nav-link" href="index.php?page=contact">Contact</a>
         </li>
         <li class="nav-item">
+        <a class="nav-link" href="index.php?page=regex">Regex</a>
+      </li>
+        <li class="nav-item">
         <a class="nav-link" href="index.php?page=apropos">About</a>
         <li class="nav-item">
         <?php 
