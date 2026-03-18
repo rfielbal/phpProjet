@@ -51,4 +51,43 @@ $result = preg_grep("/\d/", array(12,"arras",45,"Lens"));
 for ($i=0;$i<count($result);$i++){
 echo "<br />".$result[$i];
 }
+
+$string = 'Le renard marron agile saute par dessus le chien paresseux.';
+echo "$string";
+$patterns = array();
+$patterns[0] = '/agile/';
+$patterns[1] = '/marron/';
+$patterns[2] = '/renard/';
+$replacements = array();
+$replacements[2] = 'grizzly';
+$replacements[1] = 'brun';
+$replacements[0] = 'lent';
+echo preg_replace($patterns, $replacements, $string);
+
+echo "<br />";
+$result=preg_grep("/\d/",array(12,"arras",45,"lens",48));
+var_dump($result);
+foreach ($result as $key => $value) {
+  echo "</br> $value trouvée dans la case $key";
+}
+
+$string = 'Un deux trois';
+echo "$string";
+$patterns = array();
+$patterns[0] = '/Un/';
+$patterns[1] = '/deux/';
+$patterns[2] = '/trois/';
+$replacements = array();
+$replacements[2] = '1';
+$replacements[1] = '2';
+$replacements[0] = '3';
+echo preg_replace($patterns, $replacements, $string);
+
+
+$string = 'April 15, 2003';
+$pattern = '/(\w+) (\d+), (\d+)/i'; // délimite les différents éléments selon leur type (si le type est mauvais, affiche la chaine au complet)
+$replacement = '${1},$3';
+echo '</br>'.preg_replace($pattern, $replacement, $string);
+
+
 ?>
